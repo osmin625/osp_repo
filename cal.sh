@@ -1,18 +1,17 @@
 #cal.sh
-num1=$(<num1.txt)
-num2=$(<num2.txt)
+narr=($(<num1.txt),$(<num2.txt))
 if [ $# -gt 0 ]; then
 	echo ...$1 selected...
 	echo ...run calculater...
 	case $1 in
-		add) let result=$num1+$num2;;
-		sub) let result=$num1-$num2;;
-		div) let result=$num1/$num2;;
-		mul) let result=$num1*$num2;;
+		add) let result=${narr[0]}+${narr[1]};;
+		sub) let result=${narr[0]}-${narr[1]};;
+		div) let result=${narr[0]}/${narr[1]};;
+		mul) let result=${narr[0]}*${narr[1]};;
 	esac
 	echo
-	echo num1: $num1
-	echo num2: $num2
+	echo num1: ${narr[0]}
+	echo num2: ${narr[1]}
 	echo op: $1
 	echo result: $result
 else
@@ -23,14 +22,14 @@ else
 		break
 	done
 	case $opt in	
-		add) let result=$num1+$num2;;
-		sub) let result=$num1-$num2;;
-		div) let result=$num1/$num2;;
-		mul) let result=$num1*$num2;;
+		add) let result=${narr[0]}+${narr[1]};;
+        sub) let result=${narr[0]}-${narr[1]};;
+        div) let result=${narr[0]}/${narr[1]};;
+        mul) let result=${narr[0]}*${narr[1]};;
 	esac
 	echo
-	echo num1: $num1
-	echo num2: $num2
+	echo num1: ${narr[0]}
+	echo num2: ${narr[1]}
 	echo op: $opt
 	echo result: $result
 fi

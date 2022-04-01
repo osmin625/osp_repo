@@ -1,5 +1,6 @@
 #cal.sh
 narr=($(<num1.txt),$(<num2.txt))
+echo project management in github
 if [ $# -gt 0 ]; then
 	echo ...$1 selected...
 	echo ...run calculater...

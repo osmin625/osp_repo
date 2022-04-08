@@ -18,5 +18,5 @@ if __name__=='__main__':
 	for key, val in freq.items():
 		if int(sys.argv[2])==cnt:
 			break
-		print("{key} {value}".format(key=key,value=val))
+		print("{:<10}".format(key) + "{:>5}".format(val))
 		cnt += 1

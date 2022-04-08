@@ -13,7 +13,7 @@ if __name__=='__main__':
 	#print(wordlist)
 	for w in keywords:
 		freq[w] = wordlist.count(w)
-	freq = dict(sorted(freq.items(),key=lambda item: item[1]),reverse = True)
+	freq = dict(sorted(freq.items(),key=lambda item: item[1],reverse = True))
 	for key, val in freq.items():
 	    print("{key} {value}".format(key=key,value=val))
 

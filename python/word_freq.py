@@ -13,6 +13,7 @@ if __name__=='__main__':
 	#print(wordlist)
 	for w in keywords:
 		freq[w] = wordlist.count(w)
-	print(freq)
+	for key, val in freq.items():
+	    print("{key} {value}".format(key=key,value=val))
 
 		

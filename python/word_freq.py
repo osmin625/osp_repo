@@ -14,7 +14,9 @@ if __name__=='__main__':
 	for w in keywords:
 		freq[w] = wordlist.count(w)
 	freq = dict(sorted(freq.items(),key=lambda item: item[1],reverse = True))
+	cnt = 0
 	for key, val in freq.items():
-	    print("{key} {value}".format(key=key,value=val))
-
-		
+		if int(sys.argv[2])==cnt:
+			break
+		print("{key} {value}".format(key=key,value=val))
+		cnt += 1
